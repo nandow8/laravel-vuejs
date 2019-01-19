@@ -14,6 +14,17 @@ import { Form, HasError, AlertError } from 'vform'
 window.Form = Form
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
+import swal from 'sweetalert2'
+window.swal = swal;
+
+const toast = swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
+
+window.toast = toast;
 
 import Router from 'vue-router'
 Vue.use(Router)
