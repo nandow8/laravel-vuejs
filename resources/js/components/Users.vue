@@ -18,6 +18,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Type</th>
+                        <th>Bio</th>
                         <th>Registed At</th>
                         <th>Modify</th>
                     </tr>
@@ -25,8 +26,9 @@
                         <td>{{ user.id }}</td>
                         <td>{{ user.name }}</td>
                         <td>{{ user.email }}</td>
-                        <td>{{ user.created_at | myDate }}</td>
                         <td>{{ user.type | upText }}</td>
+                        <td>{{ user.bio }}</td>
+                        <td>{{ user.created_at | myDate }}</td>
                         <td>
                             <a href="#" @click="editModal(user)"><i class="fa fa-edit blue"></i></a>  
                             <a href="#" @click="deleteUser(user.id)"><i class="fa fa-trash red"></i></a>  

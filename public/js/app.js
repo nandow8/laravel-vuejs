@@ -1975,6 +1975,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -58096,11 +58098,13 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(user.email))]),
                       _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm._f("upText")(user.type)))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(user.bio))]),
+                      _vm._v(" "),
                       _c("td", [
                         _vm._v(_vm._s(_vm._f("myDate")(user.created_at)))
                       ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm._f("upText")(user.type)))]),
                       _vm._v(" "),
                       _c("td", [
                         _c(
@@ -58421,6 +58425,8 @@ var staticRenderFns = [
       _c("th", [_vm._v("Email")]),
       _vm._v(" "),
       _c("th", [_vm._v("Type")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Bio")]),
       _vm._v(" "),
       _c("th", [_vm._v("Registed At")]),
       _vm._v(" "),
