@@ -24,7 +24,7 @@
                         <td>{{ user.id }}</td>
                         <td>{{ user.name }}</td>
                         <td>{{ user.email }}</td>
-                        <td>{{ user.type }}</td>
+                        <td>{{ user.type | upText }}</td>
                         <td>
                             <a href="#"><i class="fa fa-edit blue"></i></a>  
                             <a href="#"><i class="fa fa-trash red"></i></a>  
