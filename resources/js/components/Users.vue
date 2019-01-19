@@ -131,8 +131,9 @@
             }
         },
 
-        mounted() {
+        created() {
             this.loadUser()
+            setInterval(() => this.loadUser(), 3000)
         }
     }
 </script>
