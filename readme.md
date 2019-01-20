@@ -6,6 +6,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+Client ID: 1
+Client secret: UMPxSS1fNKXpOr3FYcxDo7aWsxWNrTFO5VLJCaQF
+Password grant client created successfully.
+Client ID: 2
+Client secret: kwwg1MQXwABUkf2fDgY7fr7ISpcdgLPM15rAUYRi
 
 ## About Laravel
 
