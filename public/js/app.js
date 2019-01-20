@@ -2167,10 +2167,17 @@ __webpack_require__.r(__webpack_exports__);
       var file = e.target.files[0];
       var reader = new FileReader();
 
-      reader.onloadend = function (file) {
-        // console.log('RESULT', reader.result)
-        _this2.form.photo = reader.result;
-      };
+      if (file['size'] < 2111775) {
+        reader.onloadend = function (file) {
+          _this2.form.photo = reader.result;
+        };
+      } else {
+        swal({
+          type: 'error',
+          title: 'Oops.',
+          text: 'Your are uploading a large file'
+        });
+      }
 
       reader.readAsDataURL(file);
     }
