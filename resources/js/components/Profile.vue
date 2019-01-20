@@ -274,12 +274,14 @@
 
         methods: {
           getProfilePhoto(){
-            return "img/profile/" + this.form.photo
+            let photo = (this.form.photo.length > 200) ? this.form.photo : "img/profile/"+ this.form.photo ;
+            return photo;
           },
           updateInfo(){
             this.$Progress.start()
             this.form.put('api/profile/'+this.form.id)
                     .then(() => {
+                        Fire.$emit('AfterCreate')
                         toast({
                             type: 'success',
                             title: 'User Created in successfully'
