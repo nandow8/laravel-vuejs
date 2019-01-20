@@ -59,6 +59,12 @@ class UserController extends Controller
         //
     }
 
+    public function updateProfile(Request $request, $id)
+    {
+        $user = auth('api')->user();
+        return $request->photo;
+    }
+
     public function profile()
     {
         return auth('api')->user();

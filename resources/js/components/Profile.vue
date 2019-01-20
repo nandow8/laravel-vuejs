@@ -229,7 +229,7 @@
                               <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                             </div>
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                              <input @change="updateProfile" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
                               <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                             </div>
                           </div>
@@ -238,7 +238,7 @@
                       
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button @click.prevent="updateInfo" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                       </div>
                     </form>
@@ -270,6 +270,33 @@
         },
         mounted() {
          
+        },
+
+        methods: {
+          updateInfo(){
+            this.$Progress.start()
+            this.form.put('api/profile/'+this.form.id)
+                    .then(() => {
+                        toast({
+                            type: 'success',
+                            title: 'User Created in successfully'
+                        })
+                        this.$Progress.finish()
+                    })
+                    .catch(() => {
+                        this.$Progress.fail()
+                    })
+          },
+          updateProfile(e){
+            let file = e.target.files[0];
+            var reader = new FileReader();
+            reader.onloadend = (file) => {
+              // console.log('RESULT', reader.result)
+              this.form.photo = reader.result
+            }
+
+            reader.readAsDataURL(file)
+          }
         },
 
         created() {
