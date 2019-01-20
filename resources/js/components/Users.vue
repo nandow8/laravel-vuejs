@@ -105,6 +105,7 @@
                 editmode: false,
                 users : {},
                 form: new Form({
+                    id: '',
                     name: '',
                     email: '',
                     password: '',
@@ -116,8 +117,20 @@
         },
         
         methods: {
-            updateUser(){
-                console.log('editando PORAAAAA')
+            updateUser(id){
+                this.$Progress.start()
+                this.form.put('api/user/'+this.form.id)
+                    .then(() => {
+                        $('#addNew').modal('hide')
+                        swal(
+                            'Updated', 'Information has been updated', 'success'
+                        )
+                        this.$Progress.finish()
+                        Fire.$emit('AfterCreate')
+                    })
+                    .catch(() => {
+                        this.$Progress.fail()
+                    })
             },
             editModal(user){
                 this.editmode = true
