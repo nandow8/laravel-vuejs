@@ -2435,6 +2435,12 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this5 = this;
 
+    Fire.$on('searching', function () {
+      var query = _this5.$parent.search;
+      axios.get('api/findUser?q=' + query).then(function (data) {
+        _this5.users = data.data;
+      });
+    });
     this.loadUser(); // setInterval(() => this.loadUser(), 3000)
 
     Fire.$on('AfterCreate', function () {
@@ -78789,7 +78795,15 @@ Vue.component('not-found', __webpack_require__(/*! ./components/NotFound.vue */ 
 Vue.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js"));
 var app = new Vue({
   el: '#app',
-  router: router
+  router: router,
+  data: {
+    search: ''
+  },
+  methods: {
+    searchit: function searchit() {
+      Fire.$emit('searching');
+    }
+  }
 });
 
 /***/ }),
