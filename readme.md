@@ -12,6 +12,12 @@ Password grant client created successfully.
 Client ID: 2
 Client secret: kwwg1MQXwABUkf2fDgY7fr7ISpcdgLPM15rAUYRi
 
+https://undraw.co/illustrations
+
+https://www.laravel-enso.com/examples/table
+
+https://github.com/nandow8/awesome-vue#tutorials
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
