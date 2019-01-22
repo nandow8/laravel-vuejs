@@ -29281,3 +29281,30 @@ readers do not read off random characters that represent icons */
   color: #fff !important;
 }
 
+@media print {
+  .nav.nav-tabs li:not(.active) {
+    display: none;
+  }
+
+  .invoice {
+    padding: 10px 20px;
+  }
+
+  .invoice {
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .table-responsive table {
+    background-color: transparent !important;
+  }
+
+  .main-footer:not(.active) {
+    display: none;
+  }
+}
+
+@page {
+  margin: 0;
+}
+
