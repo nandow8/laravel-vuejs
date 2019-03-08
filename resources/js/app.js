@@ -41,6 +41,12 @@ Vue.use(VueProgressBar, {
 })
 
 let routes = [
+    { path: '/pacientes', component: require('./components/pacientes/index.vue').default },
+    { path: '/pacientes/:id', component: require('./components/pacientes/edit.vue').default },
+
+    { path: '/medicofichaclinica', component: require('./components/medicofichaclinica/index.vue').default },
+    { path: '/medicofichaclinica/create', component: require('./components/medicofichaclinica/create.vue').default },
+
     { path: '/dashboard', component: require('./components/Dashboard.vue').default },
     { path: '/profile', component: require('./components/Profile.vue').default },
     { path: '/users', component: require('./components/Users.vue').default },
