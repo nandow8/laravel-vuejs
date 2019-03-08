@@ -25,3 +25,4 @@ Route::get('findUser', 'API\UserController@search');
 
 Route::apiResources(['paciente' => 'API\PacientesController']);
 Route::apiResources(['medicofichaclinica' => 'API\MedicofichaclinicaController']);
+Route::apiResources(['medicoatestado' => 'API\MedicoAtestadoController']);

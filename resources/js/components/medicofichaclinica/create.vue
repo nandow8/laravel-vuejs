@@ -13,29 +13,33 @@
                                     <a class="nav-link" id="anamnese-tab" data-toggle="tab" href="#anamnese" role="tab" aria-controls="anamnese" aria-selected="true">anamnese</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="atestado-tab" data-toggle="tab" href="#atestado" role="tab" aria-controls="atestado" aria-selected="false">atestado</a>
+                                    <a class="nav-link active" id="atestado-tab" data-toggle="tab" href="#atestado" role="tab" aria-controls="atestado" aria-selected="false">atestado</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="medicamento-tab" data-toggle="tab" href="#medicamento" role="tab" aria-controls="medicamento" aria-selected="false">medicamento</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="historico-tab" data-toggle="tab" href="#historico" role="tab" aria-controls="historico" aria-selected="false">historico</a>
+                                    <a class="nav-link" id="historico-tab" data-toggle="tab" href="#historico" role="tab" aria-controls="historico" aria-selected="false">historico</a>
                                 </li>
                             </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade" id="anamnese" role="tabpanel" aria-labelledby="anamnese-tab">
-                                    <AnamneseComponent />
+                            <form @submit.prevent="salvarFichaclinica">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade" id="anamnese" role="tabpanel" aria-labelledby="anamnese-tab">
+                                        <AnamneseComponent />
+                                    </div>
+                                    <div class="tab-pane fade show active" id="atestado" role="tabpanel" aria-labelledby="atestado-tab">
+                                        <AtestadoComponent />
+                                    </div>
+                                    <div class="tab-pane fade" id="medicamento" role="tabpanel" aria-labelledby="medicamento-tab">
+                                        <MedicamentoComponent />
+                                    </div>
+                                    <div class="tab-pane fade" id="historico" role="tabpanel" aria-labelledby="historico-tab">
+                                        <HistoricoComponent />
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="atestado" role="tabpanel" aria-labelledby="atestado-tab">
-                                    <AtestadoComponent />
-                                </div>
-                                <div class="tab-pane fade" id="medicamento" role="tabpanel" aria-labelledby="medicamento-tab">
-                                    <MedicamentoComponent />
-                                </div>
-                                <div class="tab-pane fade show active" id="historico" role="tabpanel" aria-labelledby="historico-tab">
-                                    <HistoricoComponent />
-                                </div>
-                            </div>
+
+                                <button class="btn btn-primary">Salvar</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -50,7 +54,21 @@ import AtestadoComponent from './componentes/AtestadoComponent'
 import MedicamentoComponent from './componentes/MedicamentoComponent'
 import HistoricoComponent from './componentes/HistoricoComponent'
 export default {
-    components: { AnamneseComponent, AtestadoComponent, MedicamentoComponent, HistoricoComponent}
+    components: { AnamneseComponent, AtestadoComponent, MedicamentoComponent, HistoricoComponent},
+
+    methods: {
+        data(){
+            return {
+                form: {
+                    titulo: '',
+                    conteudo: ''
+                }
+            }
+        },
+        salvarFichaclinica() {
+            axios.post('/api/medicofichaclinica', this.form).then(res => console.log(res))
+        }
+    }
 }
 </script>
 
